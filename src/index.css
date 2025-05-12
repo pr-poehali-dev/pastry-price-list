@@ -8,8 +8,43 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #F9F5F0;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Компактный стиль для всего прайса */
+.bg-[#F9F5F0] {
+  background-color: #F9F5F0;
+}
+
+.text-[#6B4025] {
+  color: #6B4025;
+}
+
+.text-[#A67F5D] {
+  color: #A67F5D;
+}
+
+.bg-[#E8D5C4] {
+  background-color: #E8D5C4;
+}
+
+.bg-[#F7F1E9] {
+  background-color: #F7F1E9;
+}
+
+.border-[#E8D5C4] {
+  border-color: #E8D5C4;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
 }
