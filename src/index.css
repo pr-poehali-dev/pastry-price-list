@@ -116,3 +116,20 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Дополнительные стили для блоков цен и описаний */
+.bg-cream-bg {
+  background-color: #F9F5F0;
+}
+
+.bg-cream-card {
+  background-color: #F7F1E9;
+}
+
+.text-brown {
+  color: #6B4025;
+}
+
+.text-light-brown {
+  color: #A67F5D;
+}

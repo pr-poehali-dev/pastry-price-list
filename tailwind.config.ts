@@ -1,35 +1,14 @@
 
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
-import typography from "@tailwindcss/typography";
+import type { Config } from "tailwindcss";
 
-export default {
-  darkMode: ["class"],
+const config: Config = {
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
-      fontFamily: {
-        sans: ["Roboto", ...fontFamily.sans],
-        montserrat: ["Montserrat", ...fontFamily.sans],
-        roboto: ["Roboto", ...fontFamily.sans],
-      },
       colors: {
-        "cream-bg": "#F9F5F0",
-        "cream-light": "#E8D5C4",
-        "brown-light": "#A67F5D",
-        "brown-dark": "#6B4025",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,43 +46,47 @@ export default {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
           border: "hsl(var(--sidebar-border))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
           accent: "hsl(var(--sidebar-accent))",
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           ring: "hsl(var(--sidebar-ring))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
         },
+        "cream-bg": "#F9F5F0",
+        "cream-light": "#F7F1E9",
+        "cream-dark": "#E8D5C4",
+        brown: {
+          light: "#A67F5D",
+          DEFAULT: "#6B4025",
+          dark: "#513018",
+        },
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: '0', opacity: '0' },
+          to: { height: "var(--radix-accordion-content-height)", opacity: '1' },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)", opacity: '1' },
+          to: { height: '0', opacity: '0' },
+        },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-        "slide-in": "slide-in 0.5s ease-out forwards",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0", opacity: "0" },
-          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-          to: { height: "0", opacity: "0" },
-        },
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "slide-in": {
-          "0%": { transform: "translateX(-10px)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
       },
     },
   },
-  plugins: [typography, require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [require("tailwindcss-animate")],
+};
+
+export default config;
