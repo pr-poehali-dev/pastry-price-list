@@ -1,29 +1,26 @@
 
-import { type Config } from "tailwindcss";
+import { defineConfig } from 'tailwindcss';
 
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+export default defineConfig({
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
       },
       colors: {
-        'cream': '#F9F5F0',
+        'cream-bg': '#F9F5F0',
+        'cream-card': '#F7F1E9',
         'brown': {
-          light: '#A67F5D',
           DEFAULT: '#6B4025',
+          light: '#A67F5D',
         },
-        'beige': {
-          light: '#F7F1E9',
-          DEFAULT: '#E8D5C4',
-        }
       },
-      fontSize: {
-        '2xs': '0.625rem', // 10px
-      }
     },
   },
   plugins: [],
-} satisfies Config;
+});
